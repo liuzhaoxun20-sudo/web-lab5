@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Smiley Face</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+        }
+        #myCanvas {
+            background: white;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="300" height="300"></canvas>
+<p> HTML5 Canvas + JavaScript </p>
+
+<script>
+    // 1. 取得 canvas 对象 & 画笔
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // 2. 画脸（大圆）
+    ctx.beginPath();
+    ctx.arc(150, 150, 100, 0, Math.PI * 2); // 圆心(150,150)，半径100
+    ctx.fillStyle = 'yellow';
+    ctx.fill();
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+    ctx.closePath();
+
+    // 3. 左眼
+    ctx.beginPath();
+    ctx.arc(115, 120, 12, 0, Math.PI * 2);
+    ctx.fillStyle = 'black';
+    ctx.fill();
+    ctx.closePath();
+
+    // 4. 右眼
+    ctx.beginPath();
+    ctx.arc(185, 120, 12, 0, Math.PI * 2);
+    ctx.fillStyle = 'black';
+    ctx.fill();
+    ctx.closePath();
+
+    // 5. 微笑的嘴（弧线）
+    ctx.beginPath();
+    ctx.arc(150, 160, 60, 0.2 * Math.PI, 0.8 * Math.PI); // 下半弧
+    ctx.lineWidth = 6;
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+    ctx.closePath();
+
+    // 6. 在画布上写字
+    ctx.font = '20px Arial';
+    ctx.fillStyle = 'black';
+    ctx.textAlign = 'center';
+    ctx.fillText('Hello from Canvas!', 150, 270);
+</script>
+
+</body>
+</html>
