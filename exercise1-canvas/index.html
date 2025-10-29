@@ -21,16 +21,16 @@
 <body>
 
 <canvas id="myCanvas" width="300" height="300"></canvas>
-<p> HTML5 Canvas + JavaScript </p>
+<p>This smiley face is drawn with HTML5 Canvas + JavaScript 😎</p>
 
 <script>
-    // 1. 取得 canvas 对象 & 画笔
+    // 1. Get canvas element and drawing context
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
 
-    // 2. 画脸（大圆）
+    // 2. Draw face (big circle)
     ctx.beginPath();
-    ctx.arc(150, 150, 100, 0, Math.PI * 2); // 圆心(150,150)，半径100
+    ctx.arc(150, 150, 100, 0, Math.PI * 2); // center (150,150), radius 100
     ctx.fillStyle = 'yellow';
     ctx.fill();
     ctx.lineWidth = 4;
@@ -38,29 +38,29 @@
     ctx.stroke();
     ctx.closePath();
 
-    // 3. 左眼
+    // 3. Left eye
     ctx.beginPath();
     ctx.arc(115, 120, 12, 0, Math.PI * 2);
     ctx.fillStyle = 'black';
     ctx.fill();
     ctx.closePath();
 
-    // 4. 右眼
+    // 4. Right eye
     ctx.beginPath();
     ctx.arc(185, 120, 12, 0, Math.PI * 2);
     ctx.fillStyle = 'black';
     ctx.fill();
     ctx.closePath();
 
-    // 5. 微笑的嘴（弧线）
+    // 5. Smile (arc)
     ctx.beginPath();
-    ctx.arc(150, 160, 60, 0.2 * Math.PI, 0.8 * Math.PI); // 下半弧
+    ctx.arc(150, 160, 60, 0.2 * Math.PI, 0.8 * Math.PI);
     ctx.lineWidth = 6;
     ctx.strokeStyle = 'black';
     ctx.stroke();
     ctx.closePath();
 
-    // 6. 在画布上写字
+    // 6. Text on the canvas
     ctx.font = '20px Arial';
     ctx.fillStyle = 'black';
     ctx.textAlign = 'center';

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List (Local Storage)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            padding-top: 60px;
+        }
+
+        .app {
+            background: #fff;
+            border-radius: 10px;
+            width: 320px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            padding: 20px 24px;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 0 0 16px 0;
+        }
+
+        .row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid #999;
+        }
+
+        button {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: #fff;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        li {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 8px 10px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            word-break: break-word;
+        }
+
+        .del-btn {
+            border: none;
+            background: #ffefef;
+            border: 1px solid #cc6666;
+            border-radius: 4px;
+            padding: 4px 8px;
+            cursor: pointer;
+        }
+
+        .empty-hint {
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app">
+    <h2>My To-Do List</h2>
+
+    <div class="row">
+        <input id="taskInput" type="text" placeholder="Type a new task...">
+        <button onclick="addTask()">Add</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <div class="empty-hint" id="emptyHint">(No tasks yet)</div>
+</div>
+
+<script src="todo.js"></script>
+</body>
+</html>
